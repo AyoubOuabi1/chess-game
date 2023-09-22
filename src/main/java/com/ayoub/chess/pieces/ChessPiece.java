@@ -35,7 +35,7 @@ public class ChessPiece {
     public static Map<PieceType,List<Move>> getQueenMoves(Move move){
         Map<PieceType,List<Move>> pieceMove=new HashMap<>();
         List<Move> queenMove=new ArrayList<>();
-        for (int i = 1; i < 9; i++) {
+        for (int i = 0; i < 8; i++) {
             queenMove.add(new Move(move.getFromRow(),move.getFromCol()+i));
             queenMove.add(new Move(move.getFromRow()+i,move.getFromCol()));
             queenMove.add(new Move(move.getFromRow(),move.getFromCol()+i));
@@ -66,7 +66,7 @@ public class ChessPiece {
     public static Map<PieceType,List<Move>> getBishopMoves(Move move){
         Map<PieceType,List<Move>> pieceMove=new HashMap<>();
         List<Move> bishopMove=new ArrayList<>();
-        for (int i = 1; i < 9; i++) {
+        for (int i = 0; i < 8; i++) {
             bishopMove.add(new Move(move.getFromRow()+i,move.getFromCol()+i));
             bishopMove.add(new Move(move.getFromRow()-i,move.getFromCol()-i));
             bishopMove.add(new Move(move.getFromRow()-i,move.getFromCol()+i));
@@ -80,7 +80,7 @@ public class ChessPiece {
     public static Map<PieceType,List<Move>> getRookMoves(Move move){
         Map<PieceType,List<Move>> pieceMove=new HashMap<>();
         List<Move> rookMove=new ArrayList<>();
-        for (int i = 1; i < 9; i++) {
+        for (int i = 0; i < 8; i++) {
             rookMove.add(new Move(move.getFromRow(),move.getFromCol()+i));
             rookMove.add(new Move(move.getFromRow()+i,move.getFromCol()));
             rookMove.add(new Move(move.getFromRow(),move.getFromCol()+i));
