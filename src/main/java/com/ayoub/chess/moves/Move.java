@@ -3,7 +3,7 @@ package com.ayoub.chess.moves;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Move {
+public class  Move {
     private int fromRow;
     private int fromCol;
    /* private int toRow;

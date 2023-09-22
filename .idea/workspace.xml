@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04e11fa4-8dd8-4be4-8725-f6ba4182ee94" name="Changes" comment="still working">
+    <list default="true" id="04e11fa4-8dd8-4be4-8725-f6ba4182ee94" name="Changes" comment="add function to move piece from square to square">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/board/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/board/ChessBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/moves/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/moves/Move.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/pieces/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/pieces/ChessPiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/prints/PrintMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/prints/PrintMessages.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +23,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -41,6 +45,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -51,6 +57,14 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.ayoub.chess.prints" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="ChessBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ayoub.chess.board.ChessBoard" />
@@ -78,9 +92,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PrintMessagesTest.getInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chess-game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ayoub.chess.prints.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ayoub.chess.prints" />
+      <option name="MAIN_CLASS_NAME" value="com.ayoub.chess.prints.PrintMessagesTest" />
+      <option name="METHOD_NAME" value="getInput" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.PrintMessagesTest.getInput" />
         <item itemvalue="Application.ChessBoard" />
       </list>
     </recent_temporary>
@@ -99,7 +130,8 @@
       <workItem from="1695307203250" duration="3564000" />
       <workItem from="1695311328974" duration="492000" />
       <workItem from="1695317660265" duration="601000" />
-      <workItem from="1695369187703" duration="3711000" />
+      <workItem from="1695369187703" duration="10428000" />
+      <workItem from="1695389960718" duration="4102000" />
     </task>
     <task id="LOCAL-00001" summary="still work on pieces moves">
       <created>1695303000091</created>
@@ -123,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695311810624</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add function to move piece from square to square">
+      <option name="closed" value="true" />
+      <created>1695373096454</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695373096454</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +184,7 @@
     <MESSAGE value="still work on pieces moves" />
     <MESSAGE value="add function to print board" />
     <MESSAGE value="still working" />
-    <option name="LAST_COMMIT_MESSAGE" value="still working" />
+    <MESSAGE value="add function to move piece from square to square" />
+    <option name="LAST_COMMIT_MESSAGE" value="add function to move piece from square to square" />
   </component>
 </project>
