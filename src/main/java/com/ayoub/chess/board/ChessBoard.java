@@ -19,6 +19,7 @@ public class ChessBoard {
             }
          }
 
+
         chessboard[0][0] = " {♜}"; // Rook
         pieceMap.put("rook_white", Arrays.asList(new Move(0,0)));
 

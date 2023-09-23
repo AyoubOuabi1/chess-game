@@ -14,6 +14,10 @@ public class  Move {
         this.fromCol = fromCol;
     }
 
+    public Move() {
+
+    }
+
   /*  public Move(int fromRow, int fromCol, int toRow, int toCol) {
         this.fromRow = fromRow;
         this.fromCol = fromCol;
