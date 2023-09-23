@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04e11fa4-8dd8-4be4-8725-f6ba4182ee94" name="Changes" comment="start work with junit and create map to stock default position">
+    <list default="true" id="04e11fa4-8dd8-4be4-8725-f6ba4182ee94" name="Changes" comment="still working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/board/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/board/ChessBoard.java" afterDir="false" />
@@ -130,7 +130,7 @@
       <workItem from="1695369187703" duration="10428000" />
       <workItem from="1695389960718" duration="7204000" />
       <workItem from="1695415971777" duration="1951000" />
-      <workItem from="1695476700216" duration="1887000" />
+      <workItem from="1695476700216" duration="3192000" />
     </task>
     <task id="LOCAL-00001" summary="still work on pieces moves">
       <created>1695303000091</created>
@@ -170,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695394593425</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="still working">
+      <option name="closed" value="true" />
+      <created>1695478822832</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1695478822832</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,9 +198,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="still work on pieces moves" />
     <MESSAGE value="add function to print board" />
-    <MESSAGE value="still working" />
     <MESSAGE value="add function to move piece from square to square" />
     <MESSAGE value="start work with junit and create map to stock default position" />
-    <option name="LAST_COMMIT_MESSAGE" value="start work with junit and create map to stock default position" />
+    <MESSAGE value="still working" />
+    <option name="LAST_COMMIT_MESSAGE" value="still working" />
   </component>
 </project>

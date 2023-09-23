@@ -2,6 +2,7 @@ package com.ayoub.chess.moves;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class  Move {
     private int fromRow;
@@ -55,4 +56,5 @@ public class  Move {
         }
         return m;
     }
+
 }
