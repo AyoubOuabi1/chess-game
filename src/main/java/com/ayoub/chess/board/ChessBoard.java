@@ -1,5 +1,6 @@
 package com.ayoub.chess.board;
 
+import com.ayoub.chess.Helpers.Helper;
 import com.ayoub.chess.enums.PieceType;
 import com.ayoub.chess.moves.Move;
 import com.ayoub.chess.pieces.ChessPiece;
@@ -52,7 +53,7 @@ public class ChessBoard {
         pieceMap.put("knight_black",new Move(7,1));
 
         chessboard[7][2] = " {♗}";
-        pieceMap.put("Bishop_2_black",new Move(7,2));
+        pieceMap.put("Bishop_black",new Move(7,2));
 
         chessboard[7][3] = "  {♕}";
         pieceMap.put("King_black",new Move(7,3));
@@ -94,7 +95,11 @@ public class ChessBoard {
             pieceMap.put("Pawn_"+(i+1)+"_white",new Move(1,i));
         }
 
-        if(move!=null){
+        if(move!=null&& move2!=null){
+            String key=Helper.findKeyForMove(pieceMap,move);
+           // Helper.getMoveVerification(move,key).forEach((pieceType, moves) -> System.out.println(moves));
+            System.out.println(key);
+            pieceMap.put(key,move2);
             for (int i = 0; i < size; i++) {
                 for (int j = 0; j < size; j++) {
                     if (move.getFromRow() == i && move.getFromCol() == j) {
@@ -104,6 +109,8 @@ public class ChessBoard {
                     }
                 }
             }
+
+
         }
         // Print the chessboard
         for (int i = 0; i < size; i++) {
@@ -114,5 +121,7 @@ public class ChessBoard {
         }
         return pieceMap;
     }
+
+
 }
 

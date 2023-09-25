@@ -116,14 +116,6 @@ public class ChessPiece {
         pieceMove.put(PieceType.ROOK,PawnMove);
         return pieceMove;
     }
-    /*public static Map<String[],int[]> getSelectPiece(String piece,Move move){
-       // PieceType[] pieces ={PieceType.QUEEN,PieceType.KING,PieceType.BISHOP,PieceType.ROOK,PieceType.KNIGHT,PieceType.PAWN};
-        Map<String,int[]> pieceMap = new HashMap<>();
-        if(piece.equalsIgnoreCase(PieceType.QUEEN.name())){
-            pieceMap.put(PieceType.QUEEN.name(),new int[]{move.getFromRow(),move.getFromRow()});
-        }else if(piece.equalsIgnoreCase(PieceType.KING.name())){
-            pieceMap.put(PieceType.KING.name(),new int[]{move.getFromRow(),move.getFromRow()});
-        }
-    }*/
+
 
 }

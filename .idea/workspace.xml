@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04e11fa4-8dd8-4be4-8725-f6ba4182ee94" name="Changes" comment="still working">
+    <list default="true" id="04e11fa4-8dd8-4be4-8725-f6ba4182ee94" name="Changes" comment="create function to get selected index">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/board/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/board/ChessBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/moves/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/moves/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/pieces/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/pieces/ChessPiece.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -130,7 +130,10 @@
       <workItem from="1695369187703" duration="10428000" />
       <workItem from="1695389960718" duration="7204000" />
       <workItem from="1695415971777" duration="1951000" />
-      <workItem from="1695476700216" duration="3192000" />
+      <workItem from="1695476700216" duration="5415000" />
+      <workItem from="1695572651630" duration="89000" />
+      <workItem from="1695634926929" duration="272000" />
+      <workItem from="1695639056673" duration="4768000" />
     </task>
     <task id="LOCAL-00001" summary="still work on pieces moves">
       <created>1695303000091</created>
@@ -178,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695478822832</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="create function to get selected index">
+      <option name="closed" value="true" />
+      <created>1695480062060</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695480062060</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +212,7 @@
     <MESSAGE value="add function to move piece from square to square" />
     <MESSAGE value="start work with junit and create map to stock default position" />
     <MESSAGE value="still working" />
-    <option name="LAST_COMMIT_MESSAGE" value="still working" />
+    <MESSAGE value="create function to get selected index" />
+    <option name="LAST_COMMIT_MESSAGE" value="create function to get selected index" />
   </component>
 </project>
