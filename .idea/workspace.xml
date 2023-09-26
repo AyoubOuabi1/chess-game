@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04e11fa4-8dd8-4be4-8725-f6ba4182ee94" name="Changes" comment="create function to get selected index">
+    <list default="true" id="04e11fa4-8dd8-4be4-8725-f6ba4182ee94" name="Changes" comment="work on verified moves">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Helpers/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Helpers/Helper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/board/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/board/ChessBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/enums/Color.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/pieces/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/pieces/ChessPiece.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -58,17 +59,21 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.ayoub.chess" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.ayoub.chess.Helpers" />
       <recent name="com.ayoub.chess.prints" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="ChessBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ayoub.chess.board.ChessBoard" />
+      <option name="MAIN_CLASS_NAME" value="com.ayoub.chess.ChessBoard" />
       <module name="chess-game" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ayoub.chess.board.*" />
+          <option name="PATTERN" value="com.ayoub.chess.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -89,11 +94,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HelperTest.canMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chess-game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ayoub.chess.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ayoub.chess.Helpers" />
+      <option name="MAIN_CLASS_NAME" value="com.ayoub.chess.Helpers.HelperTest" />
+      <option name="METHOD_NAME" value="canMove" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HelperTest.removeMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chess-game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ayoub.chess.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ayoub.chess.Helpers" />
+      <option name="MAIN_CLASS_NAME" value="com.ayoub.chess.Helpers.HelperTest" />
+      <option name="METHOD_NAME" value="removeMove" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PrintMessagesTest.getInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chess-game" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ayoub.chess.prints.*" />
+          <option name="PATTERN" value="com.ayoub.chess.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,6 +145,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.HelperTest.canMove" />
+        <item itemvalue="JUnit.HelperTest.removeMove" />
         <item itemvalue="JUnit.PrintMessagesTest.getInput" />
         <item itemvalue="Application.ChessBoard" />
       </list>
@@ -133,7 +172,9 @@
       <workItem from="1695476700216" duration="5415000" />
       <workItem from="1695572651630" duration="89000" />
       <workItem from="1695634926929" duration="272000" />
-      <workItem from="1695639056673" duration="4768000" />
+      <workItem from="1695639056673" duration="9677000" />
+      <workItem from="1695678520169" duration="310000" />
+      <workItem from="1695720541993" duration="5537000" />
     </task>
     <task id="LOCAL-00001" summary="still work on pieces moves">
       <created>1695303000091</created>
@@ -189,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695480062060</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="work on verified moves">
+      <option name="closed" value="true" />
+      <created>1695651662086</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1695651662092</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +262,17 @@
     <MESSAGE value="start work with junit and create map to stock default position" />
     <MESSAGE value="still working" />
     <MESSAGE value="create function to get selected index" />
-    <option name="LAST_COMMIT_MESSAGE" value="create function to get selected index" />
+    <MESSAGE value="work on verified moves" />
+    <option name="LAST_COMMIT_MESSAGE" value="work on verified moves" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
