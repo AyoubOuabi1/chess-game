@@ -21,7 +21,8 @@ public class Helper {
         return null;
     }
     public static Map<PieceType, List<Move>>  getMoveAfterVerification(Move move, String piece){
-        return removeInvalidMoves(getMoveByName(move, piece));
+       return removeInvalidMoves(getMoveByName(move, piece));
+        //return getMoveByName(move, piece);
     }
 
     public static Map<PieceType, List<Move>> getMoveByName(Move move, String piece) {
@@ -63,6 +64,8 @@ public class Helper {
         int fromCol = move.getFromCol();
         return fromRow >= 0 && fromRow <= 7 && fromCol >= 0 && fromCol <= 7;
     }
+
+
     public static boolean canMove(Move move, Map<PieceType, List<Move>> pieceMap) {
         for (List<Move> moves : pieceMap.values()) {
             for (Move movee : moves) {
@@ -74,5 +77,81 @@ public class Helper {
         return false;
     }
 
+    /*public static boolean checkIfPieceOnPath(Move move, Map<PieceType, List<Move>> pieceMap) {
+
+    }*/
+    public static List<Move> getAllMovesByColor(Map<String, Move> pieceMap, String color) {
+        String clr = color.substring(Math.max(0, color.length() - 5));
+        List<Move> moves = new ArrayList<>();
+        pieceMap.forEach((piece,move) ->{
+            if (piece.toLowerCase().contains(clr.toLowerCase())) {
+                moves.add(move);
+            }
+        });
+        return moves;
+    }
+
+    public static Boolean chekMoveInList(Map<String, Move> pieceMap, String color,Move move){
+
+        for (Move movee : getAllMovesByColor(pieceMap, color)) {
+            if (movee.getFromRow() == move.getFromRow() && movee.getFromCol() == move.getFromCol()) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static Boolean chekePieceAvailbeInPath(Map<String, Move> pieceMap, String color,Move move,Move oldMove){
+
+         boolean check=true;
+         int size=getAllMovesByColor(pieceMap, color).size();
+         List<Move> moveList = getAllMovesByColor(pieceMap, color);
+         String key =findKeyForMove(pieceMap,oldMove);
+         assert key != null;
+         if (key.regionMatches(true,0,"knight",0,5)){
+             return check;
+         }else {
+             for (int i = 0; i < size; i++) {
+                 for (int j = 0; j < size; j++) {
+                     if (move.getFromRow() == moveList.get(i).getFromRow() && move.getFromCol() == moveList.get(i).getFromCol()) {
+                         return false;
+                     }else if(move.getFromRow()==moveList.get(i).getFromRow() && move.getFromCol()==moveList.get(i).getFromCol()+j) {
+                         check=false;
+                         break;
+                     }else  if(move.getFromRow()==moveList.get(i).getFromRow()+j && move.getFromCol()==moveList.get(i).getFromCol()) {
+                         check=false;
+                         break;
+                     }else  if(move.getFromRow()==moveList.get(i).getFromRow() && move.getFromCol()==moveList.get(i).getFromCol()-j) {
+                         check=false;
+                         break;
+                     }else  if(move.getFromRow()==moveList.get(i).getFromRow()-j && move.getFromCol()==moveList.get(i).getFromCol()) {
+                         check=false;
+                         break;
+                     }
+                 }
+
+             }
+         }
+
+
+        return check;
+    }
+/*  public static boolean chekePieceAvailbeInPath(Map<String, Move> pieceMap, String color, Move move) {
+      List<Move> moveList = getAllMovesByColor(pieceMap, color);
+
+      for (Move existingMove : moveList) {
+          if (move.getFromRow() == existingMove.getFromRow() && move.getFromCol() == existingMove.getFromCol()) {
+              return false;
+          }
+
+          int rowDiff = Math.abs(move.getFromRow() - existingMove.getFromRow());
+          int colDiff = Math.abs(move.getFromCol() - existingMove.getFromCol());
+
+          if (rowDiff == colDiff || rowDiff == 0 || colDiff == 0) {
+              return false;
+          }
+      }
+
+      return true;
+  }*/
 
 }

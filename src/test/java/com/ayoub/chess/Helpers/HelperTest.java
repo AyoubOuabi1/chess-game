@@ -12,6 +12,7 @@ class HelperTest {
 
     @Test
     void getMoveAfterVerification() {
+
     }
 
     @Test
@@ -19,7 +20,7 @@ class HelperTest {
     }
     @Test
     void removeMove() {
-        Helper.removeInvalidMoves(getMove()).forEach((piece,move) ->System.out.println(piece+" "+move));
+        //Helper.removeInvalidMoves(getMove()).forEach((piece,move) ->System.out.println(piece+" "+move));
         //assertEquals(true,Helper.canMove(new Move(7,0),getMove()));
 
         //getMove().forEach((piece,move) ->System.out.println(piece+" "+move));
@@ -28,37 +29,40 @@ class HelperTest {
     @Test
     void canMove() {
         //getMove().forEach((piece,move) ->System.out.println(piece+" "+move));
-        assertEquals(false,Helper.canMove(new Move(0,7),Helper.removeInvalidMoves(getMove())));
+        //assertEquals(false,Helper.canMove(new Move(0,7),Helper.removeInvalidMoves(getMove())));
     }
 
 
-    Map<PieceType, List<Move>> getMove() {
-        Map<PieceType, List<Move>> moves = new HashMap<>();
+    Map<String, Move> getMove() {
+        Map<String, Move> pieceMap = new HashMap<>();
+        pieceMap.put("rook_white", new Move(0,0));
+        pieceMap.put("Knight_white",new Move(0,1));
+        pieceMap.put("Bishop_white",new Move(0,2));
+        pieceMap.put("Queen_white",new Move(0,3));
+        pieceMap.put("King_white",new Move(0,4));
+        pieceMap.put("Bishop_2_white",new Move(0,5));
+        pieceMap.put("Knight_2_white",new Move(0,6));
+        pieceMap.put("Rook_2_white",new Move(0,8));
+        pieceMap.put("Rook_black",new Move(7,0));
+        pieceMap.put("knight_black",new Move(7,1));
+        pieceMap.put("Bishop_black",new Move(7,2));
+        pieceMap.put("King_black",new Move(7,3));
+        pieceMap.put("queen_black",new Move(7,4));
+        pieceMap.put("Bishop_2_black",new Move(7,5));
+        pieceMap.put("knight_2_black",new Move(7,6));
+        pieceMap.put("Rook_2_black",new Move(7,7));
+        for (int i = 0; i < 8; i++) {
+             pieceMap.put("Pawn_"+(i+1)+"_black",new Move(6,i));
+             pieceMap.put("Pawn_"+(i+1)+"_white",new Move(1,i));
 
-        // Enumerate through each PieceType
-        for (PieceType pieceType : PieceType.values()) {
-            List<Move> moveList = new ArrayList<>();
-
-            // Generate random moves within the constraints
-            Random random = new Random();
-            int numberOfMoves = random.nextInt(10) + 1; // Generates between 1 and 10 moves
-            for (int i = 0; i < numberOfMoves; i++) {
-                int from = random.nextInt(12) - 1; // Generates between -1 and 10
-                int to = random.nextInt(12) - 1;   // Generates between -1 and 10
-                Move move = new Move(from, to);
-
-                moveList.add(move);
-            }
-
-            if (pieceType == PieceType.PAWN) {
-                // Add the move (0, 7) to the PAWN's list
-                moveList.add(new Move(0, 7));
-            }
-
-            moves.put(pieceType, moveList);
         }
+        return pieceMap;
+    }
 
-        // Print the generated moves
-        return moves;
+    @Test
+    void getAllMovesByColor() {
+
+        Helper.getAllMovesByColor(getMove(),"queen_white").forEach(move -> System.out.println(move.toString()));
+        assertEquals(false,Helper.chekePieceAvailbeInPath(getMove(),"queen_white",new Move(0,3)));
     }
 }

@@ -19,7 +19,6 @@ import java.util.stream.Stream;
 public class Main {
     static String key;
     public static void main(String[] args) {
-
         gg();
     }
     static void gg(){

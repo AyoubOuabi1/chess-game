@@ -62,7 +62,7 @@ public class ChessPiece {
         for (int i = 0; i < 8; i++) {
             rookMove.add(new Move(move.getFromRow(),move.getFromCol()+i));
             rookMove.add(new Move(move.getFromRow()+i,move.getFromCol()));
-            rookMove.add(new Move(move.getFromRow(),move.getFromCol()+i));
+            rookMove.add(new Move(move.getFromRow(),move.getFromCol()-i));
             rookMove.add(new Move(move.getFromRow()-i,move.getFromCol()));
 
         }

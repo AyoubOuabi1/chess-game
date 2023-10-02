@@ -43,7 +43,7 @@ public class ChessBoard {
         pieceMap.put("Knight_2_white",new Move(0,6));
 
         chessboard[0][7] = " {♜}"; // Rook
-        pieceMap.put("Rook_2_white",new Move(0,8));
+        pieceMap.put("Rook_2_white",new Move(0,7));
 
 
         chessboard[7][0] = " {♖}";
@@ -91,25 +91,30 @@ public class ChessBoard {
         for (int i = 5; i < size; i++) {
             chessboard[6][i] = " {♙}";
             pieceMap.put("Pawn_"+(i+1)+"_black",new Move(6,i));
-            chessboard[1][i] = " {♟}";
-            pieceMap.put("Pawn_"+(i+1)+"_white",new Move(1,i));
+            //chessboard[1][i] = " {♟}";
+            //pieceMap.put("Pawn_"+(i+1)+"_white",new Move(1,i));
         }
 
         if(move!=null&& move2!=null){
             String key=Helper.findKeyForMove(pieceMap,move);
-            Helper.getMoveAfterVerification(move,key).forEach((keyy,movee)-> System.out.println(movee));
-           if(Helper.canMove(move2,Helper.getMoveAfterVerification(move,key))){
-                System.out.println(key);
-                pieceMap.put(key,move2);
-                for (int i = 0; i < size; i++) {
-                    for (int j = 0; j < size; j++) {
-                        if (move.getFromRow() == i && move.getFromCol() == j) {
-                            String oldValue = chessboard[i][j];
-                            chessboard[i][j] = " { } ";
-                            chessboard[move2.getFromRow()][move2.getFromCol()]=oldValue;
-                        }
-                    }
-                }
+            System.out.println(key);
+            pieceMap.forEach((keyy,movee)-> System.out.println(movee));
+            if(Helper.canMove(move2,Helper.getMoveAfterVerification(move,key))){
+               if (Helper.chekePieceAvailbeInPath(pieceMap,key,move2,move)){
+                   pieceMap.put(key,move2);
+                   for (int i = 0; i < size; i++) {
+                       for (int j = 0; j < size; j++) {
+                           if (move.getFromRow() == i && move.getFromCol() == j) {
+                               String oldValue = chessboard[i][j];
+                               chessboard[i][j] = " { } ";
+                               chessboard[move2.getFromRow()][move2.getFromCol()]=oldValue;
+                           }
+                       }
+                   }
+               }else {
+                   System.out.println("invalid move square is not allowed");
+               }
+
             }else {
                 System.out.println("invalid move");
             }
