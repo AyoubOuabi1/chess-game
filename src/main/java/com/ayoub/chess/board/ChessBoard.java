@@ -91,7 +91,7 @@ public class ChessBoard {
         for (int i = 5; i < size; i++) {
             chessboard[6][i] = " {♙}";
             pieceMap.put("Pawn_"+(i+1)+"_black",new Move(6,i));
-            //chessboard[1][i] = " {♟}";
+            chessboard[1][i] = " {♟}";
             //pieceMap.put("Pawn_"+(i+1)+"_white",new Move(1,i));
         }
 
@@ -100,7 +100,7 @@ public class ChessBoard {
             System.out.println(key);
             pieceMap.forEach((keyy,movee)-> System.out.println(movee));
             if(Helper.canMove(move2,Helper.getMoveAfterVerification(move,key))){
-               if (Helper.chekePieceAvailbeInPath(pieceMap,key,move2,move)){
+               if (Helper.isPieceAvailableInPath(pieceMap,key,move2,move)){
                    pieceMap.put(key,move2);
                    for (int i = 0; i < size; i++) {
                        for (int j = 0; j < size; j++) {

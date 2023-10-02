@@ -100,6 +100,7 @@ public class Helper {
         }
         return true;
     }
+/*
     public static Boolean chekePieceAvailbeInPath(Map<String, Move> pieceMap, String color,Move move,Move oldMove){
 
          boolean check=true;
@@ -111,47 +112,74 @@ public class Helper {
              return check;
          }else {
              for (int i = 0; i < size; i++) {
-                 for (int j = 0; j < size; j++) {
-                     if (move.getFromRow() == moveList.get(i).getFromRow() && move.getFromCol() == moveList.get(i).getFromCol()) {
-                         return false;
-                     }else if(move.getFromRow()==moveList.get(i).getFromRow() && move.getFromCol()==moveList.get(i).getFromCol()+j) {
-                         check=false;
-                         break;
-                     }else  if(move.getFromRow()==moveList.get(i).getFromRow()+j && move.getFromCol()==moveList.get(i).getFromCol()) {
-                         check=false;
-                         break;
-                     }else  if(move.getFromRow()==moveList.get(i).getFromRow() && move.getFromCol()==moveList.get(i).getFromCol()-j) {
-                         check=false;
-                         break;
-                     }else  if(move.getFromRow()==moveList.get(i).getFromRow()-j && move.getFromCol()==moveList.get(i).getFromCol()) {
-                         check=false;
-                         break;
-                     }
+                 System.out.println(i- move.getFromRow());
+                 if (move.getFromRow() == moveList.get(i).getFromRow() && move.getFromCol() == moveList.get(i).getFromCol()) {
+                     return false;
+                 }else if(move.getFromRow()==moveList.get(i).getFromRow() && i+move.getFromCol()==moveList.get(i).getFromCol()) {
+                     check=false;
+                     break;
+                 }else  if(i+move.getFromRow()==moveList.get(i).getFromRow() && move.getFromCol()==moveList.get(i).getFromCol()) {
+                     check=false;
+                     break;
+                 }else  if(move.getFromRow()==moveList.get(i).getFromRow() && i-move.getFromCol()==moveList.get(i).getFromCol()) {
+                     check=false;
+                     break;
+                 }else  if(i-move.getFromRow()==moveList.get(i).getFromRow() && move.getFromCol()==moveList.get(i).getFromCol()) {
+                     check=false;
+                     break;
                  }
-
              }
+
+
          }
 
 
         return check;
     }
-/*  public static boolean chekePieceAvailbeInPath(Map<String, Move> pieceMap, String color, Move move) {
-      List<Move> moveList = getAllMovesByColor(pieceMap, color);
+*/
 
-      for (Move existingMove : moveList) {
-          if (move.getFromRow() == existingMove.getFromRow() && move.getFromCol() == existingMove.getFromCol()) {
-              return false;
-          }
+    public static boolean isPieceAvailableInPath(Map<String, Move> pieceMap, String color, Move move, Move oldMove) {
+        List<Move> moveList = getAllMovesByColor(pieceMap, color);
 
-          int rowDiff = Math.abs(move.getFromRow() - existingMove.getFromRow());
-          int colDiff = Math.abs(move.getFromCol() - existingMove.getFromCol());
+        String key =findKeyForMove(pieceMap,oldMove);
+        assert key != null;
+        if (key.regionMatches(true,0,"knight",0,5)){
+            return true;
+        }
 
-          if (rowDiff == colDiff || rowDiff == 0 || colDiff == 0) {
-              return false;
-          }
-      }
+        int toRow = move.getFromRow();
+        int toCol = move.getFromCol();
 
-      return true;
-  }*/
+        for (Move otherMove : moveList) {
+             if (otherMove.equals(move)) {
+                continue;
+            }
 
+             if (move.getFromRow() == otherMove.getFromRow() || move.getFromCol() == otherMove.getFromCol()) {
+                 toRow = otherMove.getFromRow();
+                toCol = otherMove.getFromCol();
+
+                 if (isBetween(move.getFromRow(), toRow, move.getFromRow()) &&
+                        isBetween(move.getFromCol(), toCol, move.getFromCol())) {
+                    return false;
+                }
+            }
+
+             if (Math.abs(move.getFromRow() - otherMove.getFromRow()) == Math.abs(move.getFromCol() - otherMove.getFromCol())) {
+                 toRow = otherMove.getFromRow();
+                toCol = otherMove.getFromCol();
+
+                 if (isBetween(move.getFromRow(), toRow, move.getFromRow()) &&
+                        isBetween(move.getFromCol(), toCol, move.getFromCol())) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+     private static boolean isBetween(int value, int lower, int upper) {
+        return value >= Math.min(lower, upper) && value <= Math.max(lower, upper);
+    }
 }
