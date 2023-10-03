@@ -73,26 +73,26 @@ public class ChessBoard {
 
         for (int i = 0; i < 3; i++) {
             chessboard[6][i] = " {♙}";
-            //pieceMap.put("Pawn_"+(i+1)+"_black",new Move(6,i));
+            pieceMap.put("Pawn_"+(i+1)+"_black",new Move(6,i));
 
             chessboard[1][i] = " {♟}";
-            //pieceMap.put("Pawn_"+(i+1)+"_white",new Move(1,i));
+            pieceMap.put("Pawn_"+(i+1)+"_white",new Move(1,i));
 
         }
         chessboard[6][3] = "  {♙}";
-        //pieceMap.put("Pawn_4_black",new Move(6,3));
+        pieceMap.put("Pawn_4_black",new Move(6,3));
 
         chessboard[1][3] = "  {♟}";
-        //pieceMap.put("Pawn_4_white",new Move(1,3));
+        pieceMap.put("Pawn_4_white",new Move(1,3));
         chessboard[6][4] = "  {♙}";
-        //pieceMap.put("Pawn_5_black",new Move(6,4));
+        pieceMap.put("Pawn_5_black",new Move(6,4));
         chessboard[1][4] = "  {♟}";
-        //pieceMap.put("Pawn_5_white",new Move(1,4));
+        pieceMap.put("Pawn_5_white",new Move(1,4));
         for (int i = 5; i < size; i++) {
             chessboard[6][i] = " {♙}";
-            //pieceMap.put("Pawn_"+(i+1)+"_black",new Move(6,i));
+            pieceMap.put("Pawn_"+(i+1)+"_black",new Move(6,i));
             chessboard[1][i] = " {♟}";
-            //pieceMap.put("Pawn_"+(i+1)+"_white",new Move(1,i));
+            pieceMap.put("Pawn_"+(i+1)+"_white",new Move(1,i));
         }
         if(move!=null&& move2!=null){
             String key=Helper.findKeyForMove(pieceMap,move);

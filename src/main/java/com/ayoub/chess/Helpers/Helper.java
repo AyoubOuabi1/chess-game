@@ -94,7 +94,7 @@ public class Helper {
         if(piece.regionMatches(true,0,PieceType.ROOK.name(),0,4)){
             return ChessPiece.chekePieceAvailbeInRookPath(pieceMap,piece, move, oldMove);
         }else if(piece.regionMatches(true,0,PieceType.BISHOP.name(),0,6)){
-            return ChessPiece.chekePieceAvailbeInBishopPath(pieceMap,piece, move, oldMove);
+            return ChessPiece.checkPieceAvailableInBishopPath(pieceMap,piece, move, oldMove);
         }
         return false;
     }

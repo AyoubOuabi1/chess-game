@@ -20,6 +20,11 @@ public class Main {
     static String key;
     public static void main(String[] args) {
         gg();
+        //Move move=new Move(1,1);
+        //Move move1=new Move(1,1);
+        //System.out.println(move.equals(move1));
+        int i = new Scanner(System.in).nextInt();
+        int d=i;
     }
     static void gg(){
         Map<String,Move> pieceMap = new HashMap<>();
