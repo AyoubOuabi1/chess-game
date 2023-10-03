@@ -77,9 +77,7 @@ public class Helper {
         return false;
     }
 
-    /*public static boolean checkIfPieceOnPath(Move move, Map<PieceType, List<Move>> pieceMap) {
 
-    }*/
     public static List<Move> getAllMovesByColor(Map<String, Move> pieceMap, String color) {
         String clr = color.substring(Math.max(0, color.length() - 5));
         List<Move> moves = new ArrayList<>();
@@ -91,95 +89,11 @@ public class Helper {
         return moves;
     }
 
-    public static Boolean chekMoveInList(Map<String, Move> pieceMap, String color,Move move){
 
-        for (Move movee : getAllMovesByColor(pieceMap, color)) {
-            if (movee.getFromRow() == move.getFromRow() && movee.getFromCol() == move.getFromCol()) {
-                return false;
-            }
-        }
-        return true;
-    }
-/*
-    public static Boolean chekePieceAvailbeInPath(Map<String, Move> pieceMap, String color,Move move,Move oldMove){
+    public static Boolean chekePieceAvailbeInPath(Map<String, Move> pieceMap, String piece,Move move,Move oldMove){
+        return ChessPiece.chekePieceAvailbeInRookPath(pieceMap,piece, move, oldMove);
 
-         boolean check=true;
-         int size=getAllMovesByColor(pieceMap, color).size();
-         List<Move> moveList = getAllMovesByColor(pieceMap, color);
-         String key =findKeyForMove(pieceMap,oldMove);
-         assert key != null;
-         if (key.regionMatches(true,0,"knight",0,5)){
-             return check;
-         }else {
-             for (int i = 0; i < size; i++) {
-                 System.out.println(i- move.getFromRow());
-                 if (move.getFromRow() == moveList.get(i).getFromRow() && move.getFromCol() == moveList.get(i).getFromCol()) {
-                     return false;
-                 }else if(move.getFromRow()==moveList.get(i).getFromRow() && i+move.getFromCol()==moveList.get(i).getFromCol()) {
-                     check=false;
-                     break;
-                 }else  if(i+move.getFromRow()==moveList.get(i).getFromRow() && move.getFromCol()==moveList.get(i).getFromCol()) {
-                     check=false;
-                     break;
-                 }else  if(move.getFromRow()==moveList.get(i).getFromRow() && i-move.getFromCol()==moveList.get(i).getFromCol()) {
-                     check=false;
-                     break;
-                 }else  if(i-move.getFromRow()==moveList.get(i).getFromRow() && move.getFromCol()==moveList.get(i).getFromCol()) {
-                     check=false;
-                     break;
-                 }
-             }
-
-
-         }
-
-
-        return check;
-    }
-*/
-
-    public static boolean isPieceAvailableInPath(Map<String, Move> pieceMap, String color, Move move, Move oldMove) {
-        List<Move> moveList = getAllMovesByColor(pieceMap, color);
-
-        String key =findKeyForMove(pieceMap,oldMove);
-        assert key != null;
-        if (key.regionMatches(true,0,"knight",0,5)){
-            return true;
-        }
-
-        int toRow = move.getFromRow();
-        int toCol = move.getFromCol();
-
-        for (Move otherMove : moveList) {
-             if (otherMove.equals(move)) {
-                continue;
-            }
-
-             if (move.getFromRow() == otherMove.getFromRow() || move.getFromCol() == otherMove.getFromCol()) {
-                 toRow = otherMove.getFromRow();
-                toCol = otherMove.getFromCol();
-
-                 if (isBetween(move.getFromRow(), toRow, move.getFromRow()) &&
-                        isBetween(move.getFromCol(), toCol, move.getFromCol())) {
-                    return false;
-                }
-            }
-
-             if (Math.abs(move.getFromRow() - otherMove.getFromRow()) == Math.abs(move.getFromCol() - otherMove.getFromCol())) {
-                 toRow = otherMove.getFromRow();
-                toCol = otherMove.getFromCol();
-
-                 if (isBetween(move.getFromRow(), toRow, move.getFromRow()) &&
-                        isBetween(move.getFromCol(), toCol, move.getFromCol())) {
-                    return false;
-                }
-            }
-        }
-
-        return true;
     }
 
-     private static boolean isBetween(int value, int lower, int upper) {
-        return value >= Math.min(lower, upper) && value <= Math.max(lower, upper);
-    }
+
 }

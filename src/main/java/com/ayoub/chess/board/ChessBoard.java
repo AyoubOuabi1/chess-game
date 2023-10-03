@@ -92,15 +92,14 @@ public class ChessBoard {
             chessboard[6][i] = " {♙}";
             pieceMap.put("Pawn_"+(i+1)+"_black",new Move(6,i));
             chessboard[1][i] = " {♟}";
-            //pieceMap.put("Pawn_"+(i+1)+"_white",new Move(1,i));
+            pieceMap.put("Pawn_"+(i+1)+"_white",new Move(1,i));
         }
-
         if(move!=null&& move2!=null){
             String key=Helper.findKeyForMove(pieceMap,move);
             System.out.println(key);
-            pieceMap.forEach((keyy,movee)-> System.out.println(movee));
+            //pieceMap.forEach((keyy,movee)-> System.out.println(movee));
             if(Helper.canMove(move2,Helper.getMoveAfterVerification(move,key))){
-               if (Helper.isPieceAvailableInPath(pieceMap,key,move2,move)){
+               if (!Helper.chekePieceAvailbeInPath(pieceMap,key,move2,move)){
                    pieceMap.put(key,move2);
                    for (int i = 0; i < size; i++) {
                        for (int j = 0; j < size; j++) {
@@ -127,7 +126,7 @@ public class ChessBoard {
             for (int j = 0; j < size; j++) {
                 System.out.print(chessboard[i][j] );
             }
-            System.out.println(); // Move to the next row
+            System.out.println();
         }
         return pieceMap;
     }

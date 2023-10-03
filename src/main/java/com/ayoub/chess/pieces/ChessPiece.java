@@ -1,6 +1,7 @@
 package com.ayoub.chess.pieces;
 
 
+import com.ayoub.chess.Helpers.Helper;
 import com.ayoub.chess.enums.PieceType;
 import com.ayoub.chess.moves.Move;
 
@@ -100,6 +101,23 @@ public class ChessPiece {
         pieceMove.put(PieceType.ROOK,PawnMove);
         return pieceMove;
     }
+
+    public static Boolean chekePieceAvailbeInRookPath(Map<String, Move> pieceMap, String color,Move move,Move oldMove){
+        List<Move> moveList =new ArrayList<>();
+        for (Move newmove :  Helper.getAllMovesByColor(pieceMap, color)) {
+            if(oldMove.getFromRow()== newmove.getFromRow() || oldMove.getFromCol()== newmove.getFromCol()){
+                moveList.add(newmove);
+            }
+        }
+        moveList.removeIf(existingMove -> existingMove.getFromRow() == oldMove.getFromRow() && existingMove.getFromCol() == oldMove.getFromCol());
+         for (Move newMove : moveList){
+             if(newMove.getFromRow() == move.getFromRow()|| newMove.getFromCol()== move.getFromCol()){
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 
 }

@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04e11fa4-8dd8-4be4-8725-f6ba4182ee94" name="Changes" comment="create function for verifying is empty path or not">
+    <list default="true" id="04e11fa4-8dd8-4be4-8725-f6ba4182ee94" name="Changes" comment="working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Helpers/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Helpers/Helper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/board/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/board/ChessBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ayoub/chess/Helpers/HelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ayoub/chess/Helpers/HelperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/pieces/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/pieces/ChessPiece.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +177,8 @@
       <workItem from="1695639056673" duration="9677000" />
       <workItem from="1695678520169" duration="310000" />
       <workItem from="1695720541993" duration="7141000" />
-      <workItem from="1696165784468" duration="17468000" />
+      <workItem from="1696165784468" duration="17483000" />
+      <workItem from="1696320418634" duration="6473000" />
     </task>
     <task id="LOCAL-00001" summary="still work on pieces moves">
       <created>1695303000091</created>
@@ -257,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696235660201</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="working">
+      <option name="closed" value="true" />
+      <created>1696252734446</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1696252734446</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +293,8 @@
     <MESSAGE value="work on verified moves" />
     <MESSAGE value="verifying  moves" />
     <MESSAGE value="create function for verifying is empty path or not" />
-    <option name="LAST_COMMIT_MESSAGE" value="create function for verifying is empty path or not" />
+    <MESSAGE value="working" />
+    <option name="LAST_COMMIT_MESSAGE" value="working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
