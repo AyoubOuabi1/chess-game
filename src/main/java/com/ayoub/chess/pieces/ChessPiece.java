@@ -117,7 +117,42 @@ public class ChessPiece {
         }
         return true;
     }
+    public static Boolean chekePieceAvailbeInBishopPath(Map<String, Move> pieceMap, String color,Move move,Move oldMove){
+        List<Move> moveList = Helper.getAllMovesByColor(pieceMap, color);
+        boolean check=true;
+        for (Move newmove :  Helper.getAllMovesByColor(pieceMap, color)) {
+            if(oldMove.getFromRow()== newmove.getFromRow() || oldMove.getFromCol()== newmove.getFromCol()){
+                moveList.add(newmove);
+            }
+        }
 
+        moveList.forEach(System.out::println);
+        moveList.removeIf(existingMove -> existingMove.getFromRow() == oldMove.getFromRow() && existingMove.getFromCol() == oldMove.getFromCol());
+        int i =0;
+        for (Move newMove : moveList){
+            i++;
+            for (int j = 0; j < 8; j++) {
+                if(newMove.getFromRow() == move.getFromRow()+i && newMove.getFromCol()== move.getFromCol()+j){
+                    check= false;
+                    break;
+                }else  if(newMove.getFromRow() == move.getFromRow()+i && newMove.getFromCol()== move.getFromCol()-i){
+
+                    check= false;
+                    break;
+                }else  if(newMove.getFromRow() == move.getFromRow()-i && newMove.getFromCol()== move.getFromCol()-i){
+                    check= false;
+
+                    break;
+                }else  if(newMove.getFromRow() == move.getFromRow()-i && newMove.getFromCol()== move.getFromCol()+i){
+
+                    check= false;
+                    break;
+                }
+            }
+
+        }
+        return check;
+    }
 
 
 }
