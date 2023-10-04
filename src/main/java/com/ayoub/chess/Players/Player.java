@@ -26,4 +26,5 @@ public class Player {
     public void setColor(String color) {
         this.color = color;
     }
+
 }

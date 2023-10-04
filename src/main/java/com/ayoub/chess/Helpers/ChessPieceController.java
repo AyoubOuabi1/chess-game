@@ -77,7 +77,12 @@ public class ChessPieceController {
 
 
     public static List<Move> getAllMovesByColor(Map<String, Move> pieceMap, String color) {
-        String clr = color.substring(Math.max(0, color.length() - 5));
+        String clr;
+        if(color.length()==5){
+            clr=color;
+        }else{
+            clr = color.substring(Math.max(0, color.length() - 5));
+        }
         List<Move> moves = new ArrayList<>();
         pieceMap.forEach((piece,move) ->{
             if (piece.toLowerCase().contains(clr.toLowerCase())) {
@@ -105,5 +110,20 @@ public class ChessPieceController {
         return true;
     }
 
+    public static Boolean checkCap(String color,Move targetMove,Map<String, Move> pieceMap){
+        List<Move> moveList = new ArrayList<>();
+        if (color.equalsIgnoreCase("black")){
+            moveList=getAllMovesByColor(pieceMap, "white");
 
+        }else if (color.equalsIgnoreCase("white")){
+            moveList=getAllMovesByColor(pieceMap, "black");
+
+        }
+        for (Move move : moveList) {
+            if (move.equals(targetMove)){
+                return true;
+            }
+        }
+        return  false;
+    }
 }

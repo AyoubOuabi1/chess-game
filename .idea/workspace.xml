@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04e11fa4-8dd8-4be4-8725-f6ba4182ee94" name="Changes" comment="add functions to verify if queen,king,knight and pawn has empty path">
+    <list default="true" id="04e11fa4-8dd8-4be4-8725-f6ba4182ee94" name="Changes" comment="add two players">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Helpers/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Helpers/ChessPieceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Helpers/ChessPieceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Helpers/ChessPieceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Players/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/board/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/board/ChessBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/pieces/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/pieces/ChessPieceServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/prints/PrintMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/prints/PrintMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ayoub/chess/Helpers/HelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ayoub/chess/Helpers/HelperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/moves/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/moves/Move.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +183,8 @@
       <workItem from="1696165784468" duration="11823000" />
       <workItem from="1696358619385" duration="852000" />
       <workItem from="1696360974443" duration="7062000" />
-      <workItem from="1696404990796" duration="10155000" />
+      <workItem from="1696404990796" duration="12326000" />
+      <workItem from="1696441708047" duration="3794000" />
     </task>
     <task id="LOCAL-00001" summary="still work on pieces moves">
       <created>1695303000091</created>
@@ -272,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696409703829</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add two players">
+      <option name="closed" value="true" />
+      <created>1696427963444</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1696427963444</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +308,8 @@
     <MESSAGE value="verifying  moves" />
     <MESSAGE value="add function to verify if bishop has empty path" />
     <MESSAGE value="add functions to verify if queen,king,knight and pawn has empty path" />
-    <option name="LAST_COMMIT_MESSAGE" value="add functions to verify if queen,king,knight and pawn has empty path" />
+    <MESSAGE value="add two players" />
+    <option name="LAST_COMMIT_MESSAGE" value="add two players" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

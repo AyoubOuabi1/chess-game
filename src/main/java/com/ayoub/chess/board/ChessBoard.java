@@ -13,6 +13,8 @@ public class ChessBoard {
     private String[][] chessboard;
     private Player player1;
     private Player player2;
+    private int scorePlayer1 = 0;
+    private int scorePlayer2 = 0;
     private Player currentPlayer;
     public ChessBoard() {
         initBoard();
@@ -133,30 +135,40 @@ public class ChessBoard {
 
     public void updateBoard() {
         PrintMessages.printBoard(chessboard);
-        System.out.println(currentPlayer.getName() + ", it's your turn.");
+        System.out.println(currentPlayer.getName() + ", it's your turn. ( "+currentPlayer.getColor()+" )");
 
         while (true) {
             Optional<List<Move>> moveList = PrintMessages.getPositions();
             if (moveList.isPresent()) {
                 List<Move> moves = moveList.get();
-                Move move = moves.get(0);
-                Move move2 = moves.get(1);
+                Move oldMove = moves.get(0);
+                Move targetMove = moves.get(1);
 
-                if (move != null && move2 != null) {
-                    String key = ChessPieceController.findKeyForMove(pieceMap, move);
-                    if (ChessPieceController.canMove(move2, ChessPieceController.getMoveAfterVerification(move, key))) {
-                        if (ChessPieceController.chekePieceAvailbeInPath(pieceMap, key, move2, move)) {
-                            pieceMap.put(key, move2);
+                if (oldMove != null && targetMove != null) {
+                    String key = ChessPieceController.findKeyForMove(pieceMap, oldMove);
+                    if (ChessPieceController.canMove(targetMove, ChessPieceController.getMoveAfterVerification(oldMove, key))) {
+                        if (ChessPieceController.chekePieceAvailbeInPath(pieceMap, key, targetMove, oldMove)) {
+                            if(ChessPieceController.checkCap(getCurrentPlayerColor(),targetMove,pieceMap)){
+                                String key2=ChessPieceController.findKeyForMove(pieceMap,targetMove);
+                                pieceMap.remove(key2);
+                                if (currentPlayer == player1) {
+                                    scorePlayer1 += 1;
+                                } else {
+                                    scorePlayer2 += 1;
+                                }
+                            }
+                            pieceMap.put(key, targetMove);
                             for (int i = 0; i < chessboard.length; i++) {
                                 for (int j = 0; j < chessboard[i].length; j++) {
-                                    if (move.getFromRow() == i && move.getFromCol() == j) {
+                                    if (oldMove.getFromRow() == i && oldMove.getFromCol() == j) {
                                         String oldValue = chessboard[i][j];
                                         chessboard[i][j] = " { } ";
-                                        chessboard[move2.getFromRow()][move2.getFromCol()] = oldValue;
+                                        chessboard[targetMove.getFromRow()][targetMove.getFromCol()] = oldValue;
                                     }
                                 }
                             }
-                            break; // Valid move, exit the loop
+
+                            break;
                         } else {
                             System.out.println("Invalid move: Square is not allowed");
                         }
@@ -166,11 +178,20 @@ public class ChessBoard {
                 }
             }
         }
-
+        displayScores();
         switchPlayer();
     }
     private void switchPlayer() {
         currentPlayer = (currentPlayer == player1) ? player2 : player1;
+    }
+    private void displayScores() {
+        System.out.println("Scores:");
+        System.out.println(player1.getName() + ": " + scorePlayer1);
+        System.out.println(player2.getName() + ": " + scorePlayer2);
+    }
+
+    String getCurrentPlayerColor(){
+        return currentPlayer.getColor();
     }
 }
 
