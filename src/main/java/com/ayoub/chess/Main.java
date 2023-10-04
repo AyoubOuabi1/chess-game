@@ -36,8 +36,6 @@ public class Main {
                 pieceMap.putAll(ChessBoard.printBoard(moves.get(0),moves.get(1)));
                 move1[0] =moves.get(0);
                 move1[1] =moves.get(1);
-                //System.out.println(Helper.findKeyForMove(pieceMap,move1[0]));
-               // Helper.getMoveVerification(move1[0],Helper.findKeyForMove(pieceMap,move1[0])).forEach((piece,move)->System.out.println(move));
 
             }
         });

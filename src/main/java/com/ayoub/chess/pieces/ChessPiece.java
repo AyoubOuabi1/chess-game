@@ -119,21 +119,21 @@ public class ChessPiece {
         return true;
     }
     public static Boolean checkPieceAvailableInBishopPath(Map<String, Move> pieceMap, String color, Move targetMove, Move oldMove) {
-      List<Move> moveList = new ArrayList<>();
-      for (Move m : Helper.getAllMovesByColor(pieceMap, color)) {
-          if (m.getFromRow() != oldMove.getFromRow() && m.getFromCol() != oldMove.getFromCol()) {
-              moveList.add(m);
-          }
-      }
-      boolean check = true;
+        List<Move> moveList = new ArrayList<>();
+        for (Move m : Helper.getAllMovesByColor(pieceMap, color)) {
+            if (m.getFromRow() != oldMove.getFromRow() && m.getFromCol() != oldMove.getFromCol()) {
+                moveList.add(m);
+            }
+        }
+        boolean check = true;
 
-      for (Move move : moveList) {
-          for (int i = 0; i < 8; i++) {
-              if (oldMove.getFromRow() < targetMove.getFromRow() && oldMove.getFromCol() < targetMove.getFromCol()) {
-                  if (new Move(oldMove.getFromRow() + i, oldMove.getFromCol() + i).equals(move)) {
-                      check = false;
-                      break;
-                  }
+        for (Move move : moveList) {
+              for (int i = 0; i < 8; i++) {
+                  if (oldMove.getFromRow() < targetMove.getFromRow() && oldMove.getFromCol() < targetMove.getFromCol()) {
+                      if (new Move(oldMove.getFromRow() + i, oldMove.getFromCol() + i).equals(move)) {
+                          check = false;
+                          break;
+                      }
               } else if (oldMove.getFromRow() > targetMove.getFromRow() && oldMove.getFromCol() < targetMove.getFromCol()) {
                   if (new Move(oldMove.getFromRow() - i, oldMove.getFromCol() + i).equals(move)) {
                       check = false;
@@ -159,5 +159,36 @@ public class ChessPiece {
 
       return check;
    }
+
+    public static Boolean checkPieceAvailableInQueenPath(Map<String, Move> pieceMap, String color, Move targetMove, Move oldMove) {
+        if(checkPieceAvailableInBishopPath(pieceMap,color,targetMove,oldMove)){
+            return chekePieceAvailbeInRookPath(pieceMap, color, targetMove, oldMove);
+        }
+        return false;
+    }
+    public static Boolean checkPieceAvailableInKingPath(Map<String, Move> pieceMap, String color, Move targetMove) {
+         for(Move m : Helper.getAllMovesByColor(pieceMap, color)){
+             if (m.equals(targetMove)){
+                 return false;
+             }
+         }
+        return true;
+    }
+    public static Boolean checkPieceAvailableInPawnPath(Map<String, Move> pieceMap, String color, Move targetMove) {
+         for(Move m : Helper.getAllMovesByColor(pieceMap, color)){
+             if (m.equals(targetMove)){
+                 return false;
+             }
+         }
+        return true;
+    }
+    public static Boolean checkPieceAvailableInKnightPath(Map<String, Move> pieceMap, String color, Move targetMove) {
+         for(Move m : Helper.getAllMovesByColor(pieceMap, color)){
+             if (m.equals(targetMove)){
+                 return false;
+             }
+         }
+        return true;
+    }
 
 }

@@ -91,12 +91,20 @@ public class Helper {
 
 
     public static Boolean chekePieceAvailbeInPath(Map<String, Move> pieceMap, String piece,Move move,Move oldMove){
-        if(piece.regionMatches(true,0,PieceType.ROOK.name(),0,4)){
+        if(piece.regionMatches(true,0,PieceType.KNIGHT.name(),0,6)){
+            return ChessPiece.checkPieceAvailableInKnightPath(pieceMap,piece,move);
+        }else if(piece.regionMatches(true,0,PieceType.ROOK.name(),0,4)){
             return ChessPiece.chekePieceAvailbeInRookPath(pieceMap,piece, move, oldMove);
         }else if(piece.regionMatches(true,0,PieceType.BISHOP.name(),0,6)){
             return ChessPiece.checkPieceAvailableInBishopPath(pieceMap,piece, move, oldMove);
+        }else if(piece.regionMatches(true,0,PieceType.QUEEN.name(),0,5)) {
+            return ChessPiece.checkPieceAvailableInQueenPath(pieceMap,piece, move, oldMove);
+        }else if(piece.regionMatches(true,0,PieceType.KING.name(),0,4)) {
+            return ChessPiece.checkPieceAvailableInKingPath(pieceMap,piece, move);
+        }else if(piece.regionMatches(true,0,PieceType.PAWN.name(),0,4)) {
+            return ChessPiece.checkPieceAvailableInPawnPath(pieceMap,piece, move);
         }
-        return false;
+        return true;
     }
 
 

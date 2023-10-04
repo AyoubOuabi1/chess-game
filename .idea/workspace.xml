@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04e11fa4-8dd8-4be4-8725-f6ba4182ee94" name="Changes" comment="verifying  moves">
+    <list default="true" id="04e11fa4-8dd8-4be4-8725-f6ba4182ee94" name="Changes" comment="add function to verify if bishop has empty path">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Helpers/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Helpers/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/board/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/board/ChessBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/moves/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/moves/Move.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/pieces/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ayoub/chess/pieces/ChessPiece.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -181,7 +179,8 @@
       <workItem from="1695720541993" duration="7141000" />
       <workItem from="1696165784468" duration="11823000" />
       <workItem from="1696358619385" duration="852000" />
-      <workItem from="1696360974443" duration="6938000" />
+      <workItem from="1696360974443" duration="7062000" />
+      <workItem from="1696404990796" duration="3173000" />
     </task>
     <task id="LOCAL-00001" summary="still work on pieces moves">
       <created>1695303000091</created>
@@ -253,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695726302350</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add function to verify if bishop has empty path">
+      <option name="closed" value="true" />
+      <created>1696367982649</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1696367982650</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,7 +286,8 @@
     <MESSAGE value="create function to get selected index" />
     <MESSAGE value="work on verified moves" />
     <MESSAGE value="verifying  moves" />
-    <option name="LAST_COMMIT_MESSAGE" value="verifying  moves" />
+    <MESSAGE value="add function to verify if bishop has empty path" />
+    <option name="LAST_COMMIT_MESSAGE" value="add function to verify if bishop has empty path" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -59,7 +59,7 @@ public class ChessBoard {
         pieceMap.put("King_black",new Move(7,3));
 
         chessboard[7][4] = "  {♔}";
-        pieceMap.put("queen_black",new Move(7,4));
+         pieceMap.put("queen_black",new Move(7,4));
 
         chessboard[7][5] = " {♗}";
         pieceMap.put("Bishop_2_black",new Move(7,5));
