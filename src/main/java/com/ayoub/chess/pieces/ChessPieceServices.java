@@ -1,17 +1,16 @@
 package com.ayoub.chess.pieces;
 
 
-import com.ayoub.chess.Helpers.Helper;
+import com.ayoub.chess.Helpers.ChessPieceController;
 import com.ayoub.chess.enums.PieceType;
 import com.ayoub.chess.moves.Move;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ChessPiece {
+public class ChessPieceServices {
 
     public static Map<PieceType,List<Move>> getQueenMoves(Move move){
         Map<PieceType,List<Move>> pieceMove=new HashMap<>();
@@ -105,7 +104,7 @@ public class ChessPiece {
 
     public static Boolean chekePieceAvailbeInRookPath(Map<String, Move> pieceMap, String color,Move move,Move oldMove){
         List<Move> moveList =new ArrayList<>();
-        for (Move newmove :  Helper.getAllMovesByColor(pieceMap, color)) {
+        for (Move newmove :  ChessPieceController.getAllMovesByColor(pieceMap, color)) {
             if(oldMove.getFromRow()== newmove.getFromRow() || oldMove.getFromCol()== newmove.getFromCol()){
                 moveList.add(newmove);
             }
@@ -120,7 +119,7 @@ public class ChessPiece {
     }
     public static Boolean checkPieceAvailableInBishopPath(Map<String, Move> pieceMap, String color, Move targetMove, Move oldMove) {
         List<Move> moveList = new ArrayList<>();
-        for (Move m : Helper.getAllMovesByColor(pieceMap, color)) {
+        for (Move m : ChessPieceController.getAllMovesByColor(pieceMap, color)) {
             if (m.getFromRow() != oldMove.getFromRow() && m.getFromCol() != oldMove.getFromCol()) {
                 moveList.add(m);
             }
@@ -167,7 +166,7 @@ public class ChessPiece {
         return false;
     }
     public static Boolean checkPieceAvailableInKingPath(Map<String, Move> pieceMap, String color, Move targetMove) {
-         for(Move m : Helper.getAllMovesByColor(pieceMap, color)){
+         for(Move m : ChessPieceController.getAllMovesByColor(pieceMap, color)){
              if (m.equals(targetMove)){
                  return false;
              }
@@ -175,7 +174,7 @@ public class ChessPiece {
         return true;
     }
     public static Boolean checkPieceAvailableInPawnPath(Map<String, Move> pieceMap, String color, Move targetMove) {
-         for(Move m : Helper.getAllMovesByColor(pieceMap, color)){
+         for(Move m : ChessPieceController.getAllMovesByColor(pieceMap, color)){
              if (m.equals(targetMove)){
                  return false;
              }
@@ -183,7 +182,7 @@ public class ChessPiece {
         return true;
     }
     public static Boolean checkPieceAvailableInKnightPath(Map<String, Move> pieceMap, String color, Move targetMove) {
-         for(Move m : Helper.getAllMovesByColor(pieceMap, color)){
+         for(Move m : ChessPieceController.getAllMovesByColor(pieceMap, color)){
              if (m.equals(targetMove)){
                  return false;
              }

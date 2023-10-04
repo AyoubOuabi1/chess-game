@@ -2,16 +2,14 @@ package com.ayoub.chess.Helpers;
 
 import com.ayoub.chess.enums.PieceType;
 import com.ayoub.chess.moves.Move;
-import com.ayoub.chess.pieces.ChessPiece;
+import com.ayoub.chess.pieces.ChessPieceServices;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
-public class Helper {
+public class ChessPieceController {
     public static String findKeyForMove(Map<String, Move> pieceMap, Move targetMove) {
         for (Map.Entry<String, Move> entry : pieceMap.entrySet()) {
             if (entry.getValue().getFromRow() == targetMove.getFromRow() && entry.getValue().getFromCol() == targetMove.getFromCol()) {
@@ -27,17 +25,17 @@ public class Helper {
 
     public static Map<PieceType, List<Move>> getMoveByName(Move move, String piece) {
         if(piece.regionMatches(true,0,PieceType.ROOK.name(),0,4)){
-            return ChessPiece.getRookMoves(new Move(move.getFromRow(), move.getFromCol()));
+            return ChessPieceServices.getRookMoves(new Move(move.getFromRow(), move.getFromCol()));
         }else if(piece.regionMatches(true,0,PieceType.KNIGHT.name(),0,6)){
-            return ChessPiece.getKnightMoves(new Move(move.getFromRow(), move.getFromCol()));
+            return ChessPieceServices.getKnightMoves(new Move(move.getFromRow(), move.getFromCol()));
         } else if (piece.regionMatches(true,0,PieceType.KING.name(),0,4)) {
-            return ChessPiece.getKingMoves(new Move(move.getFromRow(), move.getFromCol()));
+            return ChessPieceServices.getKingMoves(new Move(move.getFromRow(), move.getFromCol()));
         } else if (piece.regionMatches(true,0,PieceType.QUEEN.name(),0,5)) {
-            return ChessPiece.getQueenMoves(new Move(move.getFromRow(), move.getFromCol()));
+            return ChessPieceServices.getQueenMoves(new Move(move.getFromRow(), move.getFromCol()));
         }else if (piece.regionMatches(true,0,PieceType.BISHOP.name(),0,6)) {
-            return ChessPiece.getBishopMoves(new Move(move.getFromRow(), move.getFromCol()));
+            return ChessPieceServices.getBishopMoves(new Move(move.getFromRow(), move.getFromCol()));
         }else if (piece.regionMatches(true,0,PieceType.PAWN.name(),0,4)) {
-            return ChessPiece.getPawnMoves(new Move(move.getFromRow(), move.getFromCol()));
+            return ChessPieceServices.getPawnMoves(new Move(move.getFromRow(), move.getFromCol()));
         }
         return null;
     }
@@ -92,17 +90,17 @@ public class Helper {
 
     public static Boolean chekePieceAvailbeInPath(Map<String, Move> pieceMap, String piece,Move move,Move oldMove){
         if(piece.regionMatches(true,0,PieceType.KNIGHT.name(),0,6)){
-            return ChessPiece.checkPieceAvailableInKnightPath(pieceMap,piece,move);
+            return ChessPieceServices.checkPieceAvailableInKnightPath(pieceMap,piece,move);
         }else if(piece.regionMatches(true,0,PieceType.ROOK.name(),0,4)){
-            return ChessPiece.chekePieceAvailbeInRookPath(pieceMap,piece, move, oldMove);
+            return ChessPieceServices.chekePieceAvailbeInRookPath(pieceMap,piece, move, oldMove);
         }else if(piece.regionMatches(true,0,PieceType.BISHOP.name(),0,6)){
-            return ChessPiece.checkPieceAvailableInBishopPath(pieceMap,piece, move, oldMove);
+            return ChessPieceServices.checkPieceAvailableInBishopPath(pieceMap,piece, move, oldMove);
         }else if(piece.regionMatches(true,0,PieceType.QUEEN.name(),0,5)) {
-            return ChessPiece.checkPieceAvailableInQueenPath(pieceMap,piece, move, oldMove);
+            return ChessPieceServices.checkPieceAvailableInQueenPath(pieceMap,piece, move, oldMove);
         }else if(piece.regionMatches(true,0,PieceType.KING.name(),0,4)) {
-            return ChessPiece.checkPieceAvailableInKingPath(pieceMap,piece, move);
+            return ChessPieceServices.checkPieceAvailableInKingPath(pieceMap,piece, move);
         }else if(piece.regionMatches(true,0,PieceType.PAWN.name(),0,4)) {
-            return ChessPiece.checkPieceAvailableInPawnPath(pieceMap,piece, move);
+            return ChessPieceServices.checkPieceAvailableInPawnPath(pieceMap,piece, move);
         }
         return true;
     }

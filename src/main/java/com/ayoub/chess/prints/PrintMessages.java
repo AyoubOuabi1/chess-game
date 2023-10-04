@@ -10,12 +10,14 @@ import java.util.Scanner;
 
 public class PrintMessages {
 
-    public static  String printFirstMessage(){
-        System.out.println("Welcome to Chess game!");
-        System.out.println("Please enter your name");
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.nextLine();
-        return name;
+
+    public static  void printBoard(String[][] chessboard){
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                System.out.print(chessboard[i][j] );
+            }
+            System.out.println();
+        }
     }
     public static Optional<List<Move>> getPositions(){
         Optional<List<Move>> list;
@@ -34,7 +36,7 @@ public class PrintMessages {
     }
 
     public static int[] getInput(){
-        ChessBoard.printBoard(null,null);
+
         Scanner scanner=new Scanner(System.in);
         System.out.println("please enter x position");
         int fromRow =scanner.nextInt();

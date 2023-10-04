@@ -1,12 +1,9 @@
 package com.ayoub.chess.Helpers;
 
-import com.ayoub.chess.enums.PieceType;
 import com.ayoub.chess.moves.Move;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class HelperTest {
 
@@ -62,7 +59,7 @@ class HelperTest {
     @Test
     void getAllMovesByColor() {
 
-        Helper.getAllMovesByColor(getMove(),"queen_white").forEach(move -> System.out.println(move.toString()));
+        ChessPieceController.getAllMovesByColor(getMove(),"queen_white").forEach(move -> System.out.println(move.toString()));
        // assertEquals(false,Helper.chekePieceAvailbeInPath(getMove(),"queen_white",new Move(0,3)));
     }
 }

@@ -1,13 +1,14 @@
 package com.ayoub.chess.Players;
 
 public class Player {
-    private String name;
+    private String name,color;
 
     public Player() {
     }
 
-    public Player(String name) {
+    public Player(String name, String color) {
         this.name = name;
+        this.color = color;
     }
 
     public String getName() {
@@ -16,5 +17,13 @@ public class Player {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 }
